@@ -13,12 +13,14 @@ Cherri is a language that compiles directly to a runnable Apple Shortcut, so a S
 
 The quick reference and caveats below cover most everyday code. For anything they don't cover - standard library behavior, package manager usage, etc. - go find the docs locally per the workflow below rather than guessing. For an individual action's exact parameters, the CLI's action search (Step 1 below) is the go-to, not the docs.
 
+Add `--no-ansi` to every `cherri` command you run. The CLI colors and styles a lot of its output (errors, action search, docs generation) with ANSI escape sequences, which are meant for a terminal, not for you - they add tokens and can garble how the output looks once you read it back. `--no-ansi` turns all of that off and is safe to always include.
+
 ## Step 1: Look up action signatures with `--action=`
 
 Whenever you need to know how to call a specific action - its argument names, types, order, or what it returns - use the `cherri` binary's action search instead of guessing or relying on the docs. This works standalone; it doesn't need a docs clone at all.
 
 ```console
-cherri --action=downloadURL
+cherri --no-ansi --action=downloadURL
 ```
 
 This is a **search**, not an exact-match lookup, so it's forgiving of not knowing the precise name:
@@ -100,8 +102,8 @@ If a doc file doesn't answer the question, check the live site at https://cherri
 
 If the `cherri` binary is on the user's `PATH`, compile whatever you write rather than only eyeballing it:
 
-- `cherri file.cherri` compiles a file; no output means success (Unix convention).
-- `cherri file.cherri --debug` (or `-d`) prints stack traces and writes a `.plist` you can inspect if something looks wrong.
+- `cherri file.cherri --no-ansi` compiles a file; no output means success (Unix convention).
+- `cherri file.cherri --no-ansi --debug` (or `-d`) prints stack traces and writes a `.plist` you can inspect if something looks wrong.
 
 If it's not installed, point the user at `install.md`'s instructions (Homebrew tap, Nix, or a direct release download) rather than assuming a particular install method.
 
