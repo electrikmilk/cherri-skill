@@ -1,12 +1,12 @@
 # Cherri skill
 
-A Claude Code / Claude skill for writing [Cherri](https://github.com/electrikmilk/cherri) code - the DSL that compiles to Apple Shortcuts. It gives an agent a quick syntax reference and a list of known gotchas, then has it locate, verify freshness of, and read the user's own local clone of the [cherrilang.org docs](https://github.com/electrikmilk/cherrilang.org) for anything more specific.
+An agent skill (`SKILL.md` format) for writing [Cherri](https://github.com/electrikmilk/cherri) code - the DSL that compiles to Apple Shortcuts. It works with any coding agent that supports that format. It gives an agent a quick syntax reference and a list of known gotchas, then has it locate, verify freshness of, and read the user's own local clone of the [cherrilang.org docs](https://github.com/electrikmilk/cherrilang.org) for anything more specific.
 
 This skill is for *authoring* `.cherri` files, not for contributing to the Cherri compiler itself.
 
 ## Install
 
-Clone this repo into wherever your agent looks for skills, for example:
+Clone this repo into wherever your agent looks for skills. For Claude Code, for example:
 
 ```console
 git clone https://github.com/electrikmilk/cherri-skill ~/.claude/skills/cherri
