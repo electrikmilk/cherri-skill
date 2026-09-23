@@ -6,11 +6,23 @@ This skill is for *authoring* `.cherri` files, not for contributing to the Cherr
 
 ## Install
 
+### Clone directly
+
 Clone this repo into wherever your agent looks for skills. For Claude Code, for example:
 
 ```console
 git clone https://github.com/electrikmilk/cherri-skill ~/.claude/skills/cherri
 ```
+
+### Via RoutineHub
+
+This skill is also published on [RoutineHub](https://routinehub.co/skill/cherrilang/). If you have a RoutineHub account, add RoutineHub as an MCP server in Claude Code with your own API key:
+
+```console
+claude mcp add --transport http routinehub https://routinehub.co/api/v1/YOUR_API_KEY/mcp
+```
+
+Replace `YOUR_API_KEY` with your RoutineHub API key.
 
 ## Requirements
 
