@@ -15,6 +15,8 @@ The quick reference and caveats below cover most everyday code. For anything the
 
 Add `--no-ansi` to every `cherri` command you run. The CLI colors and styles a lot of its output (errors, action search, docs generation) with ANSI escape sequences, which are meant for a terminal, not for you - they add tokens and can garble how the output looks once you read it back. `--no-ansi` turns all of that off and is safe to always include.
 
+The CLI does more than compiling and action search - signing options, decompiling, the package manager, docs generation, and more. Rather than this skill trying to enumerate every flag, run `cherri --no-ansi --help` to see the current list straight from the binary.
+
 ## Step 1: Look up action signatures with `--action=`
 
 Whenever you need to know how to call a specific action - its argument names, types, order, or what it returns - use the `cherri` binary's action search instead of guessing or relying on the docs. This works standalone; it doesn't need a docs clone at all.
